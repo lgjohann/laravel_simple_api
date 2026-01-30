@@ -11,9 +11,8 @@ class ClientController extends Controller
     {
         return response()->json(
             [
-             'status' => 'ok',
-             'message' => 'success',
-             'data' => Client::all()
+                'status' => 'ok',
+                'message' => 'API is running!',
             ], 200
         );
     }
@@ -23,8 +22,9 @@ class ClientController extends Controller
         $clients = Client::all();
         return response()->json(
             [
-
-            ]
-        )
-    }
+                'status' => 'ok',
+                'message' => 'success',
+                'data' => $clients
+            ], 200
+        );    }
 }
