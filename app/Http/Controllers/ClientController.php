@@ -19,12 +19,7 @@ class ClientController extends Controller
 
     public function clients()
     {
-        $clients = Client::all();
-        return response()->json(
-            [
-                'status' => 'ok',
-                'message' => 'success',
-                'data' => $clients
-            ], 200
-        );    }
+        $clients = Client::paginate(10);
+        return response()->json($clients, 200);
+    }
 }
